@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 2</title>
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="static/css/custom.css">
+
+        <script src="static/lib/underscore.js"></script>
+        <script src="static/lib/jquery-3.3.1.js"></script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <script data-main="static/js/main" src="static/lib/require.js"></script>
+    </head>
+    <body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Logtrust</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+
+        <div class="container">
+            <h1 class="page-header">Ejercicio 2</h1>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="exercise-description">
+                        <p>Dados 3 juegos de datos, se solicita que se cree una página web que mediante ajax lea las
+                        3 fuentes de datos y muestre 2 gráficas de highcharts, una gráfica de líneas con la fecha en
+                        eje x y tantas series como categorías, y un pie chart por categoría agrupando los datos
+                        totales (sumatorio de los valores de cada categoría).</p>
+                        <p>Las fuentes tienen información temporal una fecha, categoría y un valor. Se deben combinar
+                        las series de tal modo que si en más de una serie para una misma fecha y categoría hay
+                        datos estos se sumarán. Las categorías deberán normalizarse para que todas estén en
+                        mayúsculas, <em>Cat 1</em> y <em>cat 1</em> son equivalentes a <em>CAT 1</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="charts-zone">
+
+            <div class="container">
+                <h2 class="charts-zone-title">CHARTS</h2>
+                <div class="row">
+                    <div class="col-sm-12">
+                          <div class="panel panel-primary panel-chart">
+                            <div class="panel-heading">
+
+                                <h4 class="panel-title">
+                                    <i class="fa fa-bar-chart-o fa-fw"></i> <a data-toggle="collapse" href="#collapse1" aria-expanded="true">Chart 1</a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in" aria-expanded="true">
+                              <div class="panel-body"><p>Esta es la primera parte del ejercicio</p><div id="chart1"></div></div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <hr class="charts-divider">
+                <div class="row">
+                    <div class="col-sm-12">
+                          <div class="panel panel-primary panel-chart">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <i class="fa fa-pie-chart"></i> <a data-toggle="collapse" href="#collapse2" aria-expanded="true">Chart 2</a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse in" aria-expanded="true">
+                              <div class="panel-body"><p>Esta es la segunda parte del ejercicio</p><div id="chart2"></div></div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <div class="copyright-text text-center">
+                <p>© 2018 Miguel Martinez Lopez</p>
+            </div>
+        </footer>
+    </body>
+</html>
