@@ -20,7 +20,7 @@ Para la ejecución, instalar dependencias:
     pip install -r requirements.txt
 
 y luego ejecutar:
-    python manage.py runserver
+    python ejercicio2/manage.py runserver
 
 
 Estructura:
@@ -43,7 +43,7 @@ Estructura:
         Todas las componentes estáticas de las páginas HTML
             - javascript
             - css
-            - librerías de terceras
+            - librerías de terceros
             - tests
             - datos de las series
 
@@ -55,11 +55,11 @@ Se ha usado require.js para modularizar el código.
 
 El módulo principal es "main.js".
 
-"chart1.js" proporciona la función para dibujar el gráfico de lineas
-"chart2.js" proporciona la función para dibujar el gráfico de sectores
+`chart1.js` proporciona la función para dibujar el gráfico de lineas
+`chart2.js` proporciona la función para dibujar el gráfico de sectores
 
-"parse_data.js" prorporciona funciones para parsear y normalizar las series
-usando un estilo funcional con "underscore.js"
+`parse_data.js` prorporciona funciones para parsear y normalizar las series
+usando un estilo funcional con `underscore.js`
 
 Todo el código javascript se ha intentado encapsular en unidades facilmente testeables.
 

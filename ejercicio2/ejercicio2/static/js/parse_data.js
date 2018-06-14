@@ -1,5 +1,10 @@
 define({
     normalizeRecordSerie0: function(rawRecord){
+        /* Normalizar registro de serie 0
+         *
+         * @param {object} rawRecord Registro en crudo de la serie 0
+         * @return {object} Registro normalizado
+         */
         var date, category, record;
 
         record = {};
@@ -12,6 +17,12 @@ define({
     },
 
     normalizeRecordSerie1: function(rawRecord){
+        /* Normalizar registro de serie 1
+         *
+         * @param {object} rawRecord Registro en crudo de la serie 1
+         * @return {object} Registro normalizado
+         */
+
         var date, category, record;
 
         record = {};
@@ -28,6 +39,12 @@ define({
     },
 
     normalizeRecordSerie2: function(rawRecord){
+        /* Normalizar registro de serie 2
+         *
+         * @param {object} rawRecord Registro en crudo de la serie 1
+         * @return {object} Registro normalizado
+         */
+
         var date, category, match, record;
 
         record = {};
@@ -47,9 +64,28 @@ define({
     },
 
     groupRecordsByCategory: function(records){
+        /* Dada una lista de registros se agrupan todos en categorias
+         * Tambien se unen los registros que tienen la misma fecha.
+         * Se proporciona los datos en un formato específico listo para
+         * ser consumido por highcharts.
+         *
+         * @param {list} records Lista de registros normalizados
+         * @return {object} Objeto conteniendo para cada categoria la lista
+         *                  de datos ordenados por fecha listos para ser consumidos
+         *                  por highcharts.
+         **/
+
         var recordsByCategory = _.chain(records).groupBy(function(record){
+            // Agrupamos por categoria
+
             return record.category
         }).mapObject(function(serie, categoryName){
+            // Por cada serie asociada a la categoria devolvemos una serie
+            // donde se han agrupado los registros con la misma fecha.
+            // Dicha lista se ordena por fecha.
+            // Luego se construye una nueva lista apta para ser consumida
+            // por highcharts.
+
             return _.chain(serie).groupBy(function(record){
                     return record.date
                 }).values().map(function(recordsOfSameDate){
@@ -81,6 +117,13 @@ define({
     },
 
     parse: function(data){
+        /* Función principal que normaliza los datos de todas las series y
+         * te devuelve un objeto donde los registros están agrupados por categoria
+         * @param {list} data Lista de series
+         * @return {object} Datos agrupos por categorías listos para ser consumidos
+         *                  por highcharts
+         */
+
         var serie, record, rawRecord, recordsByCategory, records = [], i;
 
         for (i=0; i < data.length; i++) {
